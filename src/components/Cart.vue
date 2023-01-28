@@ -1,6 +1,8 @@
 <template>
   <div class="cart">
+
     <div v-if="!cart.length" class="alert alert-secondary" role="alert">No Product in cart!</div>
+
     <div
       v-if="orderPlaced"
       @click="() => this.orderPlaced=false"
@@ -17,8 +19,10 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
+
     <ul class="list-group">
       <li class="list-group-item" v-for="item in cart" :key="item.id">
+
         <button
           @click="removeItemFromCart(item.id)"
           type="button"
@@ -40,18 +44,22 @@
             >+</button>
           </div>
         </div>
+
       </li>
     </ul>
+
     <button
       v-if="cart.length"
       @click="placeOrder"
       class="checkout-button btn btn-lg btn-block btn-success"
       :disabled="isProcessing"
     >
+
       <div v-if="isProcessing" class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
+        
       </div>
       <span v-else>Checkout ($ {{ totalPrice.toLocaleString() }})</span>
+      
     </button>
   </div>
 </template>
@@ -86,6 +94,17 @@ export default {
   }
 };
 </script>
+
+
+
+
+
+
+
+
+
+
+
 
 <style scoped>
 .media {

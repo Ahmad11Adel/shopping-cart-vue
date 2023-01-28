@@ -17,7 +17,7 @@ export default {
   computed: {
     ...mapGetters(["cart"]),
     totalQty() {
-      return this.cart.reduce((a, b) => a + b.qty, 0);
+      return this.cart.reduce((a, b) => a + b.qty , 0);
     },
   },
 };

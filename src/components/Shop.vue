@@ -4,8 +4,8 @@
       class="card"
       style="width: 15rem;"
       v-for="item in products"
-      :key="item.id"
-    >
+      :key="item.id">
+
       <img :src="item.imgUrl" class="card-img-top" :alt="item.title" />
       <div class="card-body">
         <p class="card-title">{{ item.title }}</p>
@@ -13,6 +13,7 @@
         <button class="btn btn-primary" @click="addItemToCart(item)">
           Add to cart
         </button>
+        
       </div>
     </div>
   </div>

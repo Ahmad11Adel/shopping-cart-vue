@@ -9,10 +9,12 @@ const state = {
   cart: [],
 };
 
+
 const getters = {
   products: (state) => state.products,
   cart: (state) => state.cart,
 };
+
 
 const actions = {
   getProducts({ commit }) {
@@ -34,6 +36,9 @@ const actions = {
     commit("emptyCart");
   }
 };
+
+
+
 const mutations = {
   getProductData(state) {
     state.products = products;
@@ -46,6 +51,7 @@ const mutations = {
       productInCart.qty++;
     }
   },
+  
   removeFromCart(state, id) {
     state.cart = state.cart.filter((item) => item.id !== id);
   },
